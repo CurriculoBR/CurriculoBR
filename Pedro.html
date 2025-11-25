@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pedro Evangelista • Operations & Logistics Leader</title>
+
+  <style>
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f5f5f5;
+  color: #333;
+  transition: .3s;
+}
+
+/* ======= HEADER ======= */
+header {
+    background: #4A4AE5;
+    padding: 40px 15px 30px;
+    color: white;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+header p {
+    font-size: 14px;
+    margin-top: 8px;
+    opacity: .85;
+}
+
+/* ======= DIGITAÇÃO ======= */
+.typing {
+  display: inline-block;
+  border-right: 2px solid white;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: caret .7s infinite;
+  font-weight: 600;
+}
+
+@keyframes caret {
+  50% { border-color: transparent; }
+}
+
+/* ============================================================
+   🚀 AJUSTE DO TOPO DIREITO — (Bandeiras + Menu)
+   ============================================================ */
+.top-right-menu {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+/* Botões de idioma */
+.lang-btn {
+    background: rgba(255,255,255,0.9);
+    border: none;
+    border-radius: 999px;
+    padding: 4px 8px;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0 0 6px rgba(0,0,0,0.2);
+    transition: .2s;
+}
+
+.lang-btn.active {
+    background: #2f35c7;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+.lang-btn:hover {
+    transform: scale(1.08);
+}
+
+/* Botão do menu */
+#menuBtn {
+    background: white;
+    color: #4A4AE5;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+    transition: .3s;
+}
+
+#menuBtn:hover {
+    transform: scale(1.1);
+}
+
+/* ============================================================
+   🚀 MENU LATERAL CORRIGIDO
+   ============================================================ */
+#menuNav {
+    position: absolute;
+    top: 70px;
+    right: 15px;
+    background: #222;
+    padding: 15px;
+    border-radius: 10px;
+    display: none; /* ESSE É O QUE FALTAVA */
+    flex-direction: column;
+    width: 220px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    z-index: 999;
+}
+
+#menuNav a {
+  color: white !important;
+  padding: 10px 5px;
+  font-size: 15px;
+  border-bottom: 1px solid #444;
+}
+
+#menuNav a:hover {
+  color: #9aa8ff !important;
+  padding-left: 10px;
+}
+
+#menuNav a:last-child {
+  border-bottom: none;
+}
+
+/* ============================================================
+   RESTANTE DO SEU CSS (100% IGUAL)
+   ============================================================ */
+
+section {
+  padding: 28px 15px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+h2 { color: #4A4AE5; margin-bottom: 12px; font-size: 22px; }
+h3 { margin: 0; }
+
+.subtitulo { font-size: 13px; color: #666; margin-bottom: 10px; }
+
+.card {
+  background: white; padding: 18px;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.08);
+  margin-bottom: 18px;
+  opacity: 0; transform: translateY(20px);
+  transition: .6s;
+}
+
+.visible { opacity: 1 !important; transform: translateY(0) !important; }
+
+.tag {
+  display: inline-block;
+  background: #e7e9ff; color: #4A4AE5;
+  padding: 4px 8px; border-radius: 999px;
+  font-size: 11px; margin: 2px 4px 2px 0;
+  transition: .3s;
+}
+
+.tag:hover { transform: scale(1.15); background: #4A4AE5; color: white; }
+
+.accordion {
+  cursor: pointer; padding: 10px 0;
+  font-weight: bold; color: #333;
+  display: flex; justify-content: space-between;
+  align-items: center; transition: .3s;
+  gap: 10px;
+}
+
+.accordion:hover { color: #4A4AE5; }
+
+.acc-title { display: flex; flex-direction: column; }
+.acc-icon { font-size: 14px; }
+
+.accordion-content {
+  max-height: 0; overflow: hidden;
+  transition: max-height .4s ease;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 15px;
+}
+
+#darkBtn {
+  position: fixed; bottom: 20px; right: 20px;
+  background: #4A4AE5; padding: 12px 15px;
+  border-radius: 50%; color: white;
+  border: none; font-size: 18px; cursor: pointer;
+  box-shadow: 0 0 12px rgba(0,0,0,0.3);
+}
+
+.dark { background: #141414; color: #f1f1f1; }
+.dark header { background: #2f35c7; }
+.dark nav { background: #222; }
+.dark nav a { color: #f1f1f1; border-bottom: 1px solid #444; }
+.dark .card { background: #222; box-shadow: 0 0 12px rgba(0,0,0,0.6); }
+.dark h3 { color: #fff; }
+
+@media (min-width: 768px) {
+  header h1 { font-size: 30px; }
+  header p { font-size: 15px; }
+}
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Pedro Evangelista</h1>
+  <p id="typingText" class="typing"></p>
+
+  <!-- 🟦 TOPO DIREITO (bandeiras + menu) -->
+  <div class="top-right-menu">
+    <button id="btn-pt" class="lang-btn active" onclick="setLanguage('pt')">🇧🇷</button>
+    <button id="btn-en" class="lang-btn" onclick="setLanguage('en')">🇺🇸</button>
+    <button id="menuBtn" onclick="toggleMenu()">☰</button>
+  </div>
+
+  <!-- 🟦 MENU LATERAL -->
+  <nav id="menuNav">
+    <a href="#sobre" class="lang lang-pt" onclick="toggleMenu()">Sobre</a>
+    <a href="#sobre" class="lang lang-en" onclick="toggleMenu()">About</a>
+
+    <a href="#experiencia" class="lang lang-pt" onclick="toggleMenu()">Experiência</a>
+    <a href="#experiencia" class="lang lang-en" onclick="toggleMenu()">Experience</a>
+
+    <a href="#formacao" class="lang lang-pt" onclick="toggleMenu()">Formação & Certificações</a>
+    <a href="#formacao" class="lang lang-en" onclick="toggleMenu()">Education & Certifications</a>
+
+    <a href="#habilidades" class="lang lang-pt" onclick="toggleMenu()">Habilidades</a>
+    <a href="#habilidades" class="lang lang-en" onclick="toggleMenu()">Skills</a>
+
+    <a href="#contato" class="lang lang-pt" onclick="toggleMenu()">Contato</a>
+    <a href="#contato" class="lang lang-en" onclick="toggleMenu()">Contact</a>
+  </nav>
+</header>
+
+<!-- ================= SOBRE (ATUALIZADO) ================= -->
+<section id="sobre">
+  <h2 class="lang lang-pt">Sobre</h2>
+  <h2 class="lang lang-en">About</h2>
+
+  <div class="card">
+    <!-- PT -->
+    <div class="lang lang-pt">
+      <p>
+        Profissional com mais de 15 anos de experiência em Logística, atuando em operações de distribuição,
+        armazenagem, liderança de equipes e estruturação de processos. Possui ampla vivência em triagem,
+        conferência, endereçamento de materiais e gestão completa do fluxo de expedição.
+      </p>
+
+      <p>
+        Tem forte atuação em controle de estoque, gestão de cross-docking, acompanhamento de fornecedores,
+        programação de rotas e execução de operações como Milk Run. Participou de implantações de WMS
+        e de projetos de qualidade alinhados à ISO 9001.
+      </p>
+
+      <p>
+        Com domínio em SAP (PM, MM e WM), WMS, Office avançado e metodologias Lean (5S, Kaizen, Kanban
+        e Lean Manufacturing), destaca-se por impulsionar melhorias contínuas, otimizar fluxos operacionais
+        e elevar a produtividade das equipes.
+      </p>
+
+      <p>
+        Sua trajetória combina liderança, visão estratégica e sólida experiência prática, atuando em
+        reestruturações, start-up de operações e gestão operacional em ambientes E-commerce e Last Mile.
+      </p>
+    </div>
+
+    <!-- EN -->
+    <div class="lang lang-en">
+      <p>
+        Professional with over 15 years of experience in Logistics, working in distribution operations,
+        warehousing, team leadership and process structuring. Extensive background in sorting, material
+        inspection, storage allocation and full shipping workflow management.
+      </p>
+
+      <p>
+        Strong experience in inventory control, cross-docking management, supplier follow-up, route planning
+        and operational flows such as Milk Run. Participated in WMS implementations and quality projects
+        aligned with ISO 9001 standards.
+      </p>
+
+      <p>
+        With expertise in SAP (PM, MM and WM), WMS, advanced Office tools and Lean methodologies
+        (5S, Kaizen, Kanban and Lean Manufacturing), he excels in driving continuous improvement,
+        optimizing workflows and enhancing team productivity.
+      </p>
+
+      <p>
+        His career combines leadership, strategic vision and solid hands-on experience, contributing to
+        operational restructures, start-up operations and E-commerce / Last Mile performance management.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EXPERIÊNCIA ================= -->
+<section id="experiencia">
+  <h2 class="lang lang-pt">Experiência</h2>
+  <h2 class="lang lang-en">Experience</h2>
+
+  <div class="card">
+    <div class="accordion">
+      <div class="acc-title">
+        <span class="lang lang-pt">Gerente Regional de Operações Logísticas · Shopee</span>
+        <span class="lang lang-en">Regional Logistics Operations Manager · Shopee</span>
+      </div>
+      <span class="acc-icon">▼</span>
+    </div>
+    <div class="accordion-content">
+      <div class="subtitulo lang lang-pt">Jan 2025 – o momento · Minas Gerais</div>
+      <div class="subtitulo lang lang-en">Jan 2025 – present · Minas Gerais, Brazil</div>
+
+      <ul class="lang lang-pt">
+        <li>Gestão estratégica das operações logísticas regionais com foco em produtividade, qualidade e eficiência.</li>
+        <li>Responsável por múltiplos hubs e times operacionais, garantindo performance alinhada aos SLAs.</li>
+        <li>Implementação de processos, melhorias e padronização operacional em larga escala.</li>
+      </ul>
+
+      <ul class="lang lang-en">
+        <li>Strategic management of regional logistics operations focusing on productivity, quality and efficiency.</li>
+        <li>Responsible for multiple hubs and operational teams, ensuring performance aligned with SLAs.</li>
+        <li>Implementation of processes, improvements and large-scale operational standardization.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="accordion">
+      <div class="acc-title">
+        <span class="lang lang-pt">Coordenador Regional de Operações Logísticas · Shopee</span>
+        <span class="lang lang-en">Regional Logistics Operations Coordinator · Shopee</span>
+      </div>
+      <span class="acc-icon">▼</span>
+    </div>
+    <div class="accordion-content">
+      <div class="subtitulo lang lang-pt">Mar 2023 – Jan 2025 · Minas Gerais</div>
+      <div class="subtitulo lang lang-en">Mar 2023 – Jan 2025 · Minas Gerais, Brazil</div>
+
+      <ul class="lang lang-pt">
+        <li>Coordenação de operações regionais garantindo eficiência e cumprimento de indicadores-chave.</li>
+        <li>Condução de times, treinamentos e alinhamentos operacionais entre hubs e liderança.</li>
+        <li>Responsável por análises, rotinas e visibilidade estratégica de performance.</li>
+      </ul>
+
+      <ul class="lang lang-en">
+        <li>Coordinated regional operations ensuring efficiency and KPI achievement.</li>
+        <li>Led teams, trainings and operational alignment between hubs and leadership.</li>
+        <li>Responsible for strategic performance visibility, operational routines and analysis.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="accordion">
+      <div class="acc-title">
+        <span class="lang lang-pt">Coordenador Regional de Logística · Alvoar Lácteos</span>
+        <span class="lang lang-en">Regional Logistics Coordinator · Alvoar Lácteos</span>
+      </div>
+      <span class="acc-icon">▼</span>
+    </div>
+    <div class="accordion-content">
+      <div class="subtitulo lang lang-pt">Ago 2021 – Fev 2023 · Lagoa da Prata, MG</div>
+      <div class="subtitulo lang lang-en">Aug 2021 – Feb 2023 · Lagoa da Prata, MG</div>
+
+      <ul class="lang lang-pt">
+        <li>Gestão logística regional envolvendo distribuição, armazenagem e controle de estoque.</li>
+        <li>Responsável por planejamento, roteirização e acompanhamento diário das operações.</li>
+        <li>Atuação direta em indicadores, produtividade e melhorias contínuas.</li>
+      </ul>
+
+      <ul class="lang lang-en">
+        <li>Regional logistics management involving distribution, warehousing and inventory control.</li>
+        <li>Responsible for planning, routing and daily monitoring of operations.</li>
+        <li>Direct involvement with KPIs, productivity and continuous improvement.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="accordion">
+      <div class="acc-title">
+        <span class="lang lang-pt">Supervisor de Armazenagem e Distribuição · CSN</span>
+        <span class="lang lang-en">Storage & Distribution Supervisor · CSN</span>
+      </div>
+      <span class="acc-icon">▼</span>
+    </div>
+    <div class="accordion-content">
+      <div class="subtitulo lang lang-pt">Jun 2016 – Ago 2021 · Arcos, MG</div>
+      <div class="subtitulo lang lang-en">Jun 2016 – Aug 2021 · Arcos, MG</div>
+
+      <ul class="lang lang-pt">
+        <li>Supervisão geral das operações de armazenagem, expedição e distribuição.</li>
+        <li>Garantia de conformidade, segurança, produtividade e qualidade operacional.</li>
+        <li>Participação ativa em auditorias, inventários e melhoria contínua.</li>
+      </ul>
+
+      <ul class="lang lang-en">
+        <li>General supervision of warehousing, shipping and distribution operations.</li>
+        <li>Ensured compliance, safety, productivity and operational quality.</li>
+        <li>Active role in audits, inventories and continuous improvement initiatives.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================= FORMAÇÃO ================= -->
+<section id="formacao">
+  <h2 class="lang lang-pt">Formação & Certificações</h2>
+  <h2 class="lang lang-en">Education & Certifications</h2>
+
+  <div class="grid-2">
+
+    <!-- FGV -->
+    <div class="card">
+      <h3 class="lang lang-pt">MBA em Logística e Supply Chain Management · Fundação Getulio Vargas (FGV)</h3>
+      <h3 class="lang lang-en">MBA in Logistics and Supply Chain Management · Fundação Getulio Vargas (FGV)</h3>
+
+      <p class="subtitulo lang lang-pt">2018 – 2021</p>
+      <p class="subtitulo lang lang-en">2018 – 2021</p>
+
+      <p class="lang lang-pt">Logística, supply chain, estratégia e gestão de operações.</p>
+      <p class="lang lang-en">Logistics, supply chain, strategy and operations management.</p>
+    </div>
+
+    <!-- UCB -->
+    <div class="card">
+      <h3 class="lang lang-pt">Gestão de Recursos Humanos · Universidade Castelo Branco (UCB)</h3>
+      <h3 class="lang lang-en">Human Resources Management · Universidade Castelo Branco (UCB)</h3>
+
+      <p class="subtitulo lang lang-pt">2007 – 2009</p>
+      <p class="subtitulo lang lang-en">2007 – 2009</p>
+
+      <p class="lang lang-pt">Gestão de pessoas, liderança e desenvolvimento organizacional.</p>
+      <p class="lang lang-en">People management, leadership and organizational development.</p>
+    </div>
+
+  </div>
+</section>
+		
+<!-- ================= HABILIDADES ================= -->
+<section id="habilidades">
+  <h2 class="lang lang-pt">Habilidades</h2>
+  <h2 class="lang lang-en">Skills</h2>
+
+  <div class="card">
+    <h3 class="lang lang-pt">Competências Técnicas</h3>
+    <h3 class="lang lang-en">Technical Skills</h3>
+    <div>
+      <span class="tag">Gestão Operacional</span>
+      <span class="tag">Hub Management</span>
+      <span class="tag">KPIs</span>
+      <span class="tag">Excel Avançado</span>
+      <span class="tag">Logística Last Mile</span>
+      <span class="tag">Planejamento</span>
+      <span class="tag">Roteirização</span>
+      <span class="tag">Análise de Performance</span>
+    </div>
+
+    <div style="height:1px;background:#ddd;margin:15px 0;"></div>
+
+    <h3 class="lang lang-pt">Competências Comportamentais</h3>
+    <h3 class="lang lang-en">Behavioral Skills</h3>
+
+    <div>
+      <span class="tag lang lang-pt">Liderança de Equipes</span>
+      <span class="tag lang lang-en">Team Leadership</span>
+
+      <span class="tag lang lang-pt">Resolução de Problemas</span>
+      <span class="tag lang lang-en">Problem Solving</span>
+
+      <span class="tag lang lang-pt">Gestão Estratégica</span>
+      <span class="tag lang lang-en">Strategic Management</span>
+
+      <span class="tag lang lang-pt">Comunicação</span>
+      <span class="tag lang lang-en">Communication</span>
+
+      <span class="tag lang lang-pt">Tomada de Decisão</span>
+      <span class="tag lang lang-en">Decision Making</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTATO ================= -->
+<section id="contato">
+  <h2 class="lang lang-pt">Contato</h2>
+  <h2 class="lang lang-en">Contact</h2>
+
+  <div class="card">
+    <p class="lang lang-pt">📩 <strong>Email:</strong> pedro.e.evangelista@gmail.com</p>
+    <p class="lang lang-en">📩 <strong>Email:</strong> pedro.e.evangelista@gmail.com</p>
+
+    <p class="lang lang-pt">📱 <strong>WhatsApp:</strong> (31) 9 0000-0000</p>
+    <p class="lang lang-en">📱 <strong>WhatsApp:</strong> +55 (31) 9 0000-0000</p>
+
+    <p> 🔗 <strong>LinkedIn:</strong>
+      <a href="https://www.linkedin.com/in/pedro-evangelista-5a51b346/" target="_blank">
+        /pedro-evangelista-5a51b346
+      </a>
+    </p>
+  </div>
+</section>
+
+<button id="darkBtn" onclick="toggleDark()">🌙</button>
+
+<!-- ================= JAVASCRIPT ================= -->
+<script>
+function toggleMenu() {
+  const menu = document.getElementById("menuNav");
+  menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+}
+
+function toggleDark() {
+  document.body.classList.toggle("dark");
+}
+
+const accordions = document.querySelectorAll(".accordion");
+accordions.forEach(acc => {
+  const content = acc.nextElementSibling;
+  const icon = acc.querySelector(".acc-icon");
+
+  content.style.maxHeight = "0px";
+
+  acc.addEventListener("click", () => {
+    acc.classList.toggle("open");
+
+    if (acc.classList.contains("open")) {
+      content.style.maxHeight = content.scrollHeight + "px";
+      icon.textContent = "▲";
+    } else {
+      content.style.maxHeight = "0px";
+      icon.textContent = "▼";
+    }
+  });
+});
+
+const cards = document.querySelectorAll(".card");
+
+function reveal() {
+  cards.forEach(card => {
+    const rect = card.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 50) {
+      card.classList.add("visible");
+    }
+  });
+}
+
+window.addEventListener("scroll", reveal);
+reveal();
+
+function setLanguage(lang) {
+  const isPT = (lang === "pt");
+  const pt = document.querySelectorAll(".lang-pt");
+  const en = document.querySelectorAll(".lang-en");
+  const btnPT = document.getElementById("btn-pt");
+  const btnEN = document.getElementById("btn-en");
+  const typing = document.getElementById("typingText");
+
+  pt.forEach(el => el.style.display = isPT ? "" : "none");
+  en.forEach(el => el.style.display = isPT ? "none" : "");
+
+  btnPT.classList.toggle("active", isPT);
+  btnEN.classList.toggle("active", !isPT);
+
+  typing.style.animation = "none";
+
+  typing.textContent = isPT
+    ? "Gerente de Logística | Supply Chain | Last Mile | E-commerce | Líder Operacional"
+    : "Logistics Manager | Supply Chain | Last Mile | E-commerce | Operations Leader";
+
+  void typing.offsetWidth;
+  typing.style.animation = "typing 3s steps(40), blink .5s infinite";
+}
+
+setLanguage("pt");
+</script>
+
+</body>
+</html>
